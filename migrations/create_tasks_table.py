@@ -1,4 +1,4 @@
-from src.migrations.migration import Migration
+from migrations.migration import Migration
 
 
 class CreateTasksTableMigration(Migration):

@@ -1,6 +1,6 @@
 import sqlite3
-from src.db.db_manager import DBManager
-from src.util import utilities
+from db.db_manager import DBManager
+from util import utilities
 import sys
 
 

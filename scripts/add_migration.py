@@ -1,5 +1,5 @@
 import sys
-from src.util import utilities
+from util import utilities
 import sqlite3
 import functools
 

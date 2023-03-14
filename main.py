@@ -1,4 +1,4 @@
-from kivymd.app import MDApp
+from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.button import Button
@@ -6,11 +6,10 @@ from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 from kivy.graphics import Color, Line, Rectangle
 from kivy.uix.screenmanager import ScreenManager, Screen
-from kivymd.uix.pickers.datepicker import DatePickerInputField
 from db.db_manager import DBManager
 import sqlite3
-from src.util import utilities
-from src.db.run_migrations import run_migrations
+from util import utilities
+from db.run_migrations import run_migrations
 
 
 db_path = utilities.read_ini('DB', 'DB_PATH')
@@ -70,7 +69,7 @@ class AddScreen(Screen):
 
         self.text_input = TextInput()
         form_layout.add_widget(self.text_input)
-        self.due_date_input = TextInput()  # DatePickerInputField()
+        self.due_date_input = TextInput()
         form_layout.add_widget(self.due_date_input)
         form_layout.add_widget(Button(text='Add', on_press=self.add_task_and_go_back_to_main))
 
@@ -82,7 +81,7 @@ class AddScreen(Screen):
         self.manager.current = 'main'
 
 
-class MainApp(MDApp):
+class MainApp(App):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
